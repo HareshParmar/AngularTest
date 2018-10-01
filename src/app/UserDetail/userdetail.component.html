@@ -1,0 +1,38 @@
+<mat-card class="example-card marginGap" *ngIf="user != undefined">
+    <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+    </mat-card-header>
+    <mat-card-content>
+        <h3>Name  {{ user.name }}</h3>
+        <br/>
+        <h3>Phone {{ user.phone }}</h3>
+        <br/>
+        <h3>website {{ user.website }}</h3>
+        <br/>
+        <h3>username {{ user.username }}</h3>
+        <br/>
+        <h3>Address</h3>
+        <br/>
+        <h4>{{ user.address.street }} </h4>
+        <br/>
+        <h4>{{ user.address.suite }} </h4>
+        <br/>
+        <h4>{{ user.address.city }} </h4>
+        <br/>
+        <h4>{{ user.address.zipcode }} </h4>
+        <br/>
+        <h4>geo</h4>
+        <br/>
+        <h5>{{ user.address.geo.lat }} </h5>
+        <br/>
+        <h5>{{ user.address.geo.lng }} </h5>
+        <br/>
+        <h3>Company</h3>
+        <br/>
+        <h4>{{ user.company.name }}</h4>
+        <br/>
+        <h4>{{ user.company.catchPhrase }}</h4>
+        <br/>
+        <h4>{{ user.company.bs }}</h4>
+    </mat-card-content>
+</mat-card>
