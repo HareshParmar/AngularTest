@@ -1,4 +1,5 @@
 import { Routes, RouterModule } from '@angular/router';
+import { TResolver } from './Shared/resolver';
 
 const appRoutes: Routes = [
     {
@@ -7,7 +8,10 @@ const appRoutes: Routes = [
     },
     {
         path: 'userdetail/:id',
-        loadChildren: './UserDetail/userdetail.module#UserDetailModule'
+        loadChildren: './UserDetail/userdetail.module#UserDetailModule',
+        resolve: {
+            user : TResolver
+        }
     },
     {
         path: '**',

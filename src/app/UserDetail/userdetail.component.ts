@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, ActivatedRouteSnapshot } from "@angular/router";
 import { UserService } from "../service/user.service";
 import { UserModel } from "../model/userModel";
 
@@ -13,20 +13,22 @@ export class UserDetailComponent {
 
     user: UserModel;
     constructor(private route: ActivatedRoute,
-        private service: UserService) {
+        private service: UserService
+        ) {
     }
 
     ngOnInit() {
-       
+        this.user = this.route.snapshot.data['user'];
+        // console.log(this.route.snapshot.data['user']);
     }
 
     ngAfterContentInit(){
-        this.route.params.subscribe((params) => {
-            const id = +params['id'];
-            if (id > 0) {
-                this.LoadUser(id);
-            }
-        })
+        // this.route.params.subscribe((params) => {
+        //     const id = +params['id'];
+        //     if (id > 0) {
+        //         this.LoadUser(id);
+        //     }
+        // })
     }
 
     LoadUser(id: number) {

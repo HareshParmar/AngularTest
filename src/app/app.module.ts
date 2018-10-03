@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { Routing } from './app.routing';
 import { UserService } from './service/user.service';
+import { TResolver } from './Shared/resolver';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { UserService } from './service/user.service';
     Routing
   ],
   providers: [
-    UserService
+    UserService,
+    TResolver
   ],
   bootstrap: [AppComponent]
 })
